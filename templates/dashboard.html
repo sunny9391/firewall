@@ -16,12 +16,6 @@
             </span>
             <div class="quote-floating">Infinite Protection, Intelligent Detection</div>
         </div>
-        <div class="nav-right">
-            <a href="https://github.com/Piyush-2975/Advanced-WAF-WAFinity" target="_blank" rel="noopener noreferrer" class="nav-link" title="GitHub">
-                </a>
-            <a href="https://www.linkedin.com/in/piyushmejari" target="_blank" rel="noopener noreferrer" class="nav-link" title="LinkedIn">
-                </a>
-        </div>
     </nav>
 
     <section class="dashboard-section">
@@ -30,49 +24,59 @@
             <header class="dashboard-header">
                 <h2>Security Analytics Dashboard</h2>
                 <p>Real-time insights into your application's threat landscape.</p>
+                <span id="lastUpdated" class="last-updated">Last updated: --</span>
             </header>
 
             <div class="summary-cards">
-                <div class="card">
+                <div class="card metric-card">
                     <h3 class="card-title">Total Requests</h3>
-                    <span id="totalRequests" class="card-value">...</span>
+                    <span id="totalRequests" class="card-value">0</span>
                 </div>
-                <div class="card">
+                <div class="card metric-card">
                     <h3 class="card-title">Blocked Threats</h3>
-                    <span id="blockedThreats" class="card-value glow-red">...</span>
+                    <span id="blockedRequests" class="card-value glow-red">0</span>
                 </div>
-                <div class="card">
+                <div class="card metric-card">
                     <h3 class="card-title">ML Anomalies</h3>
-                    <span id="mlAnomalies" class="card-value glow-orange">...</span>
+                    <span id="mlAnomalies" class="card-value glow-orange">0</span>
                 </div>
+                <div class="card metric-card">
+                    <h3 class="card-title">Block Rate</h3>
+                    <span id="blockRate" class="card-value">0%</span>
+                </div>
+            </div>
+
+            <div class="health-card card">
+                <h3 class="card-title">Threat Posture</h3>
+                <div class="health-progress">
+                    <div id="healthFill" class="health-fill"></div>
+                </div>
+                <p id="healthLabel" class="health-label">No traffic data yet</p>
             </div>
 
             <div class="top-lists-container">
                 <div class="top-list card">
                     <h3 class="card-title">Top Attacking IPs</h3>
-                    <ul id="topIpsList">
-                        </ul>
+                    <ul id="topIpsList"></ul>
                 </div>
 
                 <div class="top-list card">
                     <h3 class="card-title">Top Targeted URLs</h3>
-                    <ul id="topUrlsList">
-                        </ul>
+                    <ul id="topUrlsList"></ul>
                 </div>
             </div>
 
             <div class="log-stream card">
                 <h3 class="card-title">Live Event Stream</h3>
-                <ul id="liveLogs">
-                    </ul>
+                <ul id="liveLogs"></ul>
             </div>
         </div>
     </section>
-    
+
     <footer>
-        <p>© 2025 WAFinity | AI-Powered Web Security </p>
+        <p>© 2025 WAFinity | AI-Powered Web Security</p>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
 </body>
 </html>

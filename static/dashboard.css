@@ -1,0 +1,125 @@
+/* dashboard.css */
+
+.dashboard-section {
+    min-height: 100vh;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dashboard-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #fff, #00FFD1);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.dashboard-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    padding: 2.5rem;
+    background: rgba(0, 255, 234, 0.05);
+    border: 1px solid rgba(0, 255, 234, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.2);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #00FFD1;
+    margin-bottom: 1rem;
+}
+
+.card-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.glow-red { color: #ff4444; }
+.glow-orange { color: #ffa500; }
+
+.top-lists-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.top-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.top-list li {
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.log-stream ul {
+    list-style: none;
+    padding: 0;
+}
+
+.log-stream li {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Inherit background from home.html */
+.dashboard-section .cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(0, 255, 234, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 234, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    opacity: 0.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .summary-cards, .top-lists-container {
+        grid-template-columns: 1fr;
+    }
+}

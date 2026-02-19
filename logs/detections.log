@@ -100,3 +100,35 @@
 2025-05-01 17:05:14 - GET /search?q=%27%20OR%20%271%27%3D%271 HTTP/1.1 Host: www.example.com User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8 Accept-Encoding: gzip, deflate, br Accept-Language: en-US,en;q=0.9 Connection: keep-alive - malicious(ML)
 2025-05-01 17:10:35 - rrrr - valid
 2025-05-01 17:10:40 - GET /search?q=%27%20OR%20%271%27%3D%271 HTTP/1.1 Host: www.example.com User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8 Accept-Encoding: gzip, deflate, br Accept-Language: en-US,en;q=0.9 Connection: keep-alive - malicious(ML)
+2025-09-02 09:47:26 - GET /search?q=' OR '1'='1'; DROP TABLE users;-- HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-09-02 09:47:51 - GET /search?q=' OR '1'='1'; DROP TABLE users;-- HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-09-02 09:48:11 - GET /comment?text=<script>eval(String.fromCharCode(97,108,101,114,116,40,39,88,83,83,39,41))</script> HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-09-02 09:51:25 - GET /search?q=1' UNION SELECT username,password FROM users-- HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-09-02 10:01:09 - GET / HTTP/1.1 Host: www.example.com - valid
+2025-09-02 10:01:18 - GET / HTTP/1.1 Host: www.google.com - valid
+2025-09-02 10:01:24 - GET / HTTP/1.1 Host: www.google54324321.com - valid
+2025-09-02 10:06:21 - GET / HTTP/1.1 Host: www.example.com - valid
+2025-09-02 10:06:31 - GET /products?category=electronics&page=2 HTTP/1.1 Host: www.ecommerce.com Referer: https://www.ecommerce.com/products - valid
+2025-09-02 10:06:39 - GET /search?q=' OR '1'='1'; DROP TABLE users;-- HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-09-02 10:09:22 - GET /search?q=%27%20OR%20%271%27%3D%271 HTTP/1.1 Host: www.example.com - malicious(ML)
+2025-09-02 10:19:41 - GET /products?category=electronics&page=2 HTTP/1.1 Host: www.ecommerce.com Referer: https://www.ecommerce.com/products - valid
+2025-09-02 12:22:49 - GET / HTTP/1.1 Host: www.example.com - valid
+2025-09-02 12:23:13 - GET /search?q=' OR '1'='1'; DROP TABLE users;-- HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-09-02 12:23:31 - GET /search?q=%27%20OR%20%271%27%3D%271 HTTP/1.1 Host: www.example.com - malicious(ML)
+2025-09-02 12:23:45 - GET /comment?text=<details%20open%20ontoggle=Function('ale'+'rt(1)')()> HTTP/1.1 - malicious(ML)
+2025-09-02 12:23:46 - GET /comment?text=<details%20open%20ontoggle=Function('ale'+'rt(1)')()> HTTP/1.1 - malicious(ML)
+2025-09-02 12:24:30 - GET /comment?text=<details%20open%20ontoggle=Function('ale'+'rt(1)')()> HTTP/1.1 - malicious(ML)
+2025-09-02 12:26:36 - GET /comment?text=<details%20open%20ontoggle=Function('ale'+'rt(1)')()> HTTP/1.1 - malicious(ML)
+2025-09-02 12:27:06 - GET /comment?text=<script>alert('XSS')</script> HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-09-04 14:22:02 - GET /search?q=' OR '1'='1 - malicious(signature)
+2025-09-04 14:22:51 - GET /search?q=' OR '1'='1 - malicious(signature)
+2025-09-04 14:22:58 - GET /search?q - valid
+2025-09-04 14:23:17 - GET /comment?text=%3Cscript%3Ealert('XSS')%3C/script%3E - malicious(signature)
+2025-09-04 14:31:36 - GET / HTTP/1.1 Host: www.example.com - valid
+2025-09-04 14:32:31 - GET /products?category=electronics&page=2 HTTP/1.1 Host: www.ecommerce.com Referer: https://www.ecommerce.com/products - valid
+2025-09-22 10:30:30 - GET /products?category=electronics&page=2 HTTP/1.1 - valid
+2025-09-22 10:30:44 - GET /search?q=' OR '1'='1'; DROP TABLE users;-- HTTP/1.1 - malicious(signature)
+2025-12-20 13:23:25 - GET /search?q=' OR '1'='1'; DROP TABLE users;-- HTTP/1.1 Host: www.example.com - malicious(signature)
+2025-12-20 13:24:43 - GET /products?category=electronics&page=2 HTTP/1.1 Host: www.ecommerce.com Referer: https://www.ecommerce.com/products - valid
+2025-12-20 13:24:53 - GET /comment?text=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E HTTP/1.1 Host: www.example.com - malicious(ML)
+2025-12-20 13:25:46 - GET /search?q=' OR '1'='1'; DROP TABLE users;-- HTTP/1.1 Host: www.example.com - malicious(signature)

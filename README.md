@@ -132,8 +132,7 @@ Host: www.example.com
 
 1. Clone the repository:
 
-bash
-```
+```bash
 git clone https://github.com/YOUR_USERNAME/Advanced-WAF-WAFinity.git
 ```
 ```
@@ -142,24 +141,16 @@ cd Advanced-WAF-WAFinity
 
 2. Install dependencies:
 
-bash
-```
+```bash
 pip install -r requirements.txt
 ```
 
 3. Run the application:
 
-bash
-```
+```bash
 python app.py
 ```
 
 ## License
 
 MIT License
-" > README.md
-
-## Add and commit README
-git add README.md
-git commit -m "Add README.md"
-git push
